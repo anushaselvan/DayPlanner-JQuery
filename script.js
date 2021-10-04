@@ -4,7 +4,6 @@ $("#currentDay").text(today);
 var rowTextArea = ['9','10','11','12','13','14','15','16','17'];
 
 var currentTime = moment().format("HH");
-console.log(currentTime);
 for (var i=1; i<rowTextArea.length; i++) {
 console.log(rowTextArea[i]);
     if(currentTime === rowTextArea[i])
