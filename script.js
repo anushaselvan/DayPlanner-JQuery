@@ -4,19 +4,21 @@ $("#currentDay").text(today);
 var rowTextArea = ['9','10','11','12','13','14','15','16','17'];
 
 var currentTime = moment().format("HH");
-for (var i=0; i<rowTextArea.length; i++) {
+console.log(currentTime);
+for (var i=1; i<rowTextArea.length; i++) {
 console.log(rowTextArea[i]);
     if(currentTime === rowTextArea[i])
     {
        $(".time-block").children().eq(i).children().eq(1).addClass("red");
     }
-    if(currentTime < rowTextArea[i])
+    else if(currentTime > rowTextArea[i])
+    {
+      console.log("You are here");
+       $(".time-block").children().eq(i).children().eq(1).addClass("grey");
+    }
+    else
     {
        $(".time-block").children().eq(i).children().eq(1).addClass("green");
-    }
-    if(currentTime > rowTextArea[i])
-    {
-       $(".time-block").children().eq(i).children().eq(1).addClass("grey");
   }
 }
 
